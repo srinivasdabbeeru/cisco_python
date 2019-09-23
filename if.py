@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 from time import ctime,sleep
-from subprocess import getstatusoutput,getoutput
+from subprocess import getstatusoutput,getoutput,call
 from os import mkdir
+from os import path
 
 #only importing desired dunctions
 
@@ -30,9 +31,13 @@ elif int(choice) == 2:
 
 elif int(choice) == 3:
 	d_name = input("enter directory name to create : ")
+	while path.exists(d_name):
+		call(['say', d_name+" directory name already exists. please enter a new name : "])
+		#System Call to read the content in the brackets
+		d_name = input("directory name already exists. please enter a new name : ")
 	mkdir(d_name)
 	print(d_name, " successfully created")
-	#do  your hoemwork
+	call(['say', d_name+" succesfully created"])
 
 elif choice == '5':
 	web=input("enter website name to ping : ")
