@@ -6,8 +6,8 @@ data = sys.argv[1:]
 
 for i in data :
 	print("PING  request for server : "+i)
-        print(getoutput("ping -c 3 "+i))
-        print("____________________")
-        print("--------------------")
+    print(getoutput("ping -c 3 "+i))
+    print("____________________")
+    print("--------------------")
 
 print(sum)
