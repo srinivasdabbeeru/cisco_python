@@ -32,6 +32,11 @@ elif int(choice) == 3:
 	d_name = input("enter directory name to create : ")
 	mkdir(d_name)
 	print(d_name, " successfully created")
+	#do  your hoemwork
+
+elif choice == '5':
+	web=input("enter website name to ping : ")
+	print(getoutput("ping -c 5 "+web))
 	
 else:
 	print("wrong option")
