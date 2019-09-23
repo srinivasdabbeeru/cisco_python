@@ -2,6 +2,7 @@
 
 from time import ctime,sleep
 from subprocess import getstatusoutput,getoutput
+from os import mkdir
 
 #only importing desired dunctions
 
@@ -21,5 +22,16 @@ print ("you have chosen ", choice)
 
 if choice == '1':
 	print(ctime())
+
+elif int(choice) == 2:
+	cmd = input("please enter any command : ")
+	output = getoutput(cmd)
+	print(output)
+
+elif int(choice) == 3:
+	d_name = input("enter directory name to create : ")
+	mkdir(d_name)
+	print(d_name, " successfully created")
+	
 else:
 	print("wrong option")
