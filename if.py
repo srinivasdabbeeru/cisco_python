@@ -17,3 +17,9 @@ print(options)
 choice=input()
 print ("you have chosen ", choice)
 
+#conditional statement with if
+
+if choice == '1':
+	print(ctime())
+else:
+	print("wrong option")
