@@ -1,0 +1,133 @@
+
+csr1000v_1#term len 0
+csr1000v_1#show run
+Building configuration...
+
+Current configuration : 1063 bytes
+!
+! Last configuration change at 06:42:24 UTC Tue Sep 24 2019
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console auto
+!
+hostname csr1000v_1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$u2UQ$Kk1Np2zmXkc2nrli8B4P41
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+no ip domain lookup
+ip domain name srinivas.com
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9KKZA0HQ3JP
+spanning-tree extend system-id
+!
+username root privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ ip address dhcp
+ negotiation auto
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 8
+ login local
+ transport input ssh
+!
+!
+end
+
+csr1000v_1#
