@@ -27,5 +27,5 @@ output= device_access.recv(65000)
 #print(type(output))
 print(output.decode('ascii'))
 # now want to save output in a file
-with open("csr100v.txt", "w") as f:
+with open("csr100v.txt", "w+") as f:
 	f.write(output.decode('ascii'))
