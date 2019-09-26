@@ -1,0 +1,23 @@
+---
+ - hosts: all
+   tasks:
+    - name: i want to run command
+      ios_command:
+       commands:
+        - show version
+        - show ip int br
+        - show run
+        - show clock
+    
+    - name: i want to ping google
+      ios_ping:
+       dest: 8.8.8.8
+    
+    - name: i want run some more commands
+      ios_command:
+       commands:
+        - show ip route
+      register: output
+
+    - name: showing normal output
+      debug: msg="hello world"
